@@ -4,6 +4,25 @@
   
     
     <entry>
+      <title>显示系统信息的脚本</title>
+      <link href="/2022/06/13/%E6%98%BE%E7%A4%BA%E7%B3%BB%E7%BB%9F%E4%BF%A1%E6%81%AF%E7%9A%84%E8%84%9A%E6%9C%AC/"/>
+      <url>/2022/06/13/%E6%98%BE%E7%A4%BA%E7%B3%BB%E7%BB%9F%E4%BF%A1%E6%81%AF%E7%9A%84%E8%84%9A%E6%9C%AC/</url>
+      
+        <content type="html"><![CDATA[<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">vim systeminfo.sh</span><br><span class="line">#!/bin/bash</span><br><span class="line">RED=&quot;\E[1;31m&quot;</span><br><span class="line">GREEN=&quot;\E[1;32m&quot;</span><br><span class="line">END=&quot;\E[0m&quot;</span><br><span class="line">echo -e  &quot;$GREEN----------------------Host systeminfo--------------------$END&quot;</span><br><span class="line">echo -e  &quot;HOSTNAME:     $RED`hostname`$END&quot;</span><br><span class="line">echo -e  &quot;IPADDR:       $RED` ifconfig eth0|grep -Eo &#x27;([0-9]&#123;1,3&#125;\.)&#123;3&#125;[0-9]</span><br><span class="line">&#123;1,3&#125;&#x27; |head -n1`$END&quot;</span><br><span class="line">echo -e  &quot;OSVERSION:    $RED`cat /etc/redhat-release`$END&quot;</span><br><span class="line">echo -e  &quot;KERNEL:       $RED`uname -r`$END&quot;</span><br><span class="line">echo -e  &quot;CPU:         $RED`lscpu|grep &#x27;Model name&#x27;|tr -s &#x27; &#x27;|cut -d : -f2`$END&quot;</span><br><span class="line">echo -e  &quot;MEMORY:       $RED`free -h|grep Mem|tr -s &#x27; &#x27; : |cut -d : -f2`$END&quot;</span><br><span class="line">echo -e  &quot;DISK:         $RED`lsblk |grep &#x27;^sd&#x27; |tr -s &#x27; &#x27; |cut -d &quot; &quot; -f4`$END&quot;</span><br><span class="line">echo -e  &quot;$GREEN---------------------------------------------------------$END&quot;</span><br></pre></td></tr></table></figure>]]></content>
+      
+      
+      
+        <tags>
+            
+            <tag> 脚本 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>Hello World</title>
       <link href="/2022/06/10/hello-world/"/>
       <url>/2022/06/10/hello-world/</url>
